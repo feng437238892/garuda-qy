@@ -1,0 +1,120 @@
+//list
+.batchbar {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  padding: 0 15px;
+  font-size: 16px;
+  .allpick {
+    display: flex;
+    align-items: center;
+    &:before {
+      content: " ";
+      display: block;
+      box-sizing: border-box;
+      width: 18px;
+      height: 18px;
+      border-radius: 100%;
+      border: solid 2px #C3C3C3;
+      margin-right: 15px;
+
+    }
+    &.batch {
+      &:before {
+        background-color: #5077aa;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: #fff;
+  &:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1px solid #C3C3C3;
+    color: #C3C3C3;
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    -ms-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+  }
+}
+
+.batch {
+  .checker-item {
+    &:before {
+      content: " ";
+      display: table;
+      box-sizing: border-box;
+      width: 18px;
+      height: 18px;
+      border: solid 1px #C3C3C3;
+      border-radius: 100%;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+    &.selected {
+      &:before {
+        background-color: #5077aa;
+      }
+    }
+  }
+}
+
+.choose {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 50px;
+  border-radius: 8%;
+  .checker-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    &:before {
+      content: " ";
+      display: inline-block;
+      box-sizing: border-box;
+      width: 18px;
+      height: 18px;
+      border: solid 1px #C3C3C3;
+      border-radius: 5px;
+      margin-right: 15px;
+    }
+    &.selected {
+      &:before {
+        background: url('data:image/svg+xml;charset=utf8,<svg width="18px" height="18px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="1.当日将到/pms订单/预付确认" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="预付款操作-预付-输入金额" transform="translate(-175.000000, -585.000000)"><g id="Group-2" transform="translate(175.000000, 585.000000)"><rect id="Rectangle" stroke="#1ACDB4" stroke-width="2" x="1" y="1" width="34" height="34" rx="5"></rect><path d="M6.86169054,16.6295651 L13.6055018,22.0020776 L30.3979724,6.53204749 C30.3979724,6.53204749 31.5251982,5.50359158 32.5084285,6.3064643 C32.8012507,6.5486847 33.1392986,7.23313534 32.377474,8.3050369 L14.8458097,28.8434599 C14.8458097,28.8434599 13.5007382,30.6825259 11.9050913,28.8232264 L4.33999016,18.6066692 C4.33999016,18.6066692 3.44190752,17.2241094 4.56499213,16.3944646 C4.94408813,16.1165359 5.8058813,15.6832418 6.86169054,16.6295651" id="勾-(1)" fill="#1ACDB4"></path></g></g></g></svg>');
+        background-position: center;
+        background-size: contain;
+        border: none;
+        border-radius: 0;
+      }
+    }
+  }
+}
+
+//detail
+.money {
+  margin-bottom: 29px;
+  outline: none;
+  border: 1px solid #E6E6E6;
+  height: 35px;
+  border-radius: 6px;
+  text-indent: 1em;
+  font-size: 14px;
+  &::placeholder {
+    color: #E0E0E0;
+  }
+}
+
+
+

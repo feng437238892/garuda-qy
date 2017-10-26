@@ -1,0 +1,268 @@
+header {
+  position: relative;
+  z-index: 500;
+  color: #4A4A4A;
+  .toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    background-color: #fff;
+    border-bottom: solid 1px #e0e0e0;
+    div {
+      text-align: center;
+      flex-grow: 1;
+      font-size: 13px;
+      vertical-align: middle;
+      &:not(:last-child) {
+        color: #8A8A8A;
+        border-right: solid 1px #e0e0e0;
+        &:after {
+          content: ' ';
+          display: inline-block;
+          vertical-align: middle;
+          width: 0;
+          height: 0;
+          margin-left: 5px;
+          border-style: solid;
+          border-width: 5px 5px 0 5px;
+          border-color: #D8D8D8 transparent transparent transparent;
+        }
+        &.reverse {
+          &:after {
+            border-style: solid;
+            border-width: 0 5px 5px 5px;
+            border-color: transparent transparent #8A8A8A transparent;
+          }
+        }
+      }
+      &:last-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:before {
+          content: ' ';
+          display: block;
+          height: 13px;
+          width: 13px;
+          margin-right: 5px;
+          vertical-align: middle;
+          background-image: url('data:image/svg+xml;charset=utf8,<svg width="26px" height="27px" viewBox="534 245 26 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M538.252287,255.468514 L538.270602,255.488337 L546.042273,247.78517 L544.623185,246.380074 L538.252287,252.698001 L535.417429,249.887842 L534,251.292938 L538.23228,255.488337 L538.252287,255.468514 Z M545.227815,259.435811 L534.922755,259.435811 C534.413508,259.436715 534.000911,259.846201 534,260.35161 L534,270.567388 C534,271.073248 534.413085,271.483186 534.922755,271.483186 L545.229475,271.483186 C545.474502,271.483186 545.709444,271.386489 545.882544,271.214371 C546.055644,271.042286 546.152653,270.808921 546.15223,270.565741 L546.15223,260.349931 C546.149465,259.84491 545.736673,259.436715 545.227815,259.435811 Z M535.988714,269.582174 L544.161824,269.582174 L544.161824,261.335145 L535.988714,261.335145 L535.988714,269.582174 Z M559.075618,259.435811 L548.768866,259.435811 C548.259651,259.436715 547.847055,259.846201 547.846144,260.35161 L547.846144,270.567388 C547.847055,271.072796 548.259651,271.482282 548.768866,271.483186 L559.075618,271.483186 C559.320613,271.483186 559.555588,271.386489 559.728688,271.214371 C559.901755,271.042286 559.998796,270.808921 559.998341,270.565741 L559.998341,260.349931 C559.99743,259.844813 559.584573,259.435811 559.075618,259.435811 Z M549.834858,269.582174 L558.007968,269.582174 L558.007968,261.335145 L549.834858,261.335145 L549.834858,269.582174 Z M559.075618,245.034513 L548.768866,245.034513 C548.260172,245.034513 547.847803,245.443773 547.847803,245.948633 L547.847803,256.16609 C547.847803,256.670271 548.260855,257.080209 548.770525,257.080209 L559.077277,257.080209 C559.586232,257.080209 559.999089,256.671207 560,256.16609 L560,245.948633 C559.998178,245.443224 559.584833,245.034513 559.075618,245.034513 Z M549.834858,255.179229 L558.007968,255.179229 L558.007968,246.933847 L549.834858,246.933847 L549.834858,255.179229 Z" id="批量操作" stroke="none" fill="#4A4A4A" fill-rule="evenodd"></path></svg>');
+          background-size: cover;
+          background-position: center;
+
+        }
+      }
+    }
+  }
+  .cancelbar {
+    text-align: right;
+    div {
+      display: inline-block;
+      right: 0;
+      width: 33%;
+      font-size: 13px;
+      line-height: 40px;
+      text-align: center;
+      background-color: #fff;
+      border-bottom: solid 1px #e0e0e0;
+      border-left: solid 1px #e0e0e0;
+    }
+  }
+}
+
+.rooms-container {
+  overflow: hidden;
+}
+
+.rooms {
+  padding-bottom: 100px;
+  margin: 5px;
+  .item {
+    display: block;
+    float: left;
+    width: 33.33%;
+  }
+  .room-wrap {
+    .room-item {
+      position: relative;
+      box-sizing: border-box;
+      padding: 10px;
+      margin: 5px;
+      height: 90px;
+      color: #4A4A4A;
+      background-color: #fff;
+      border-radius: 2px;
+      border: solid 1px #e0e0e0;
+      p {
+        font-size: 26px;
+        line-height: 36px;
+        &:not(:nth-child(2)) {
+          font-size: 12px;
+          line-height: 17px;
+        }
+      }
+      &.roomstatus0 {
+        background-color: #80C435;
+        color: #fff;
+      }
+      &.roomstatus1 {
+        background-color: #C3C3C3;
+        color: #fff;
+      }
+      &.roomstatus2 {
+        background-color: #4A9BDF;
+        color: #fff;
+      }
+      &.enable {
+        background-color: #80C435;
+        color: #fff;
+      }
+    }
+  }
+  &.isBatch {
+    .item {
+      .room-item {
+        &:after {
+          content: ' ';
+          display: block;
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          height: 20px;
+          width: 20px;
+          border: solid 1px #e0e0e0;
+          box-sizing: border-box;
+          border-radius: 100%;
+        }
+        &.roomstatus2:after {
+          display: none;
+        }
+      }
+      &.selected {
+        .room-item:after {
+          background-image: url('data:image/svg+xml;charset=utf8,<svg width="40px" height="40px" viewBox="182 438 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(182.000000, 438.000000)"><circle id="Oval" fill="#FFFFFF" cx="20" cy="20" r="20"></circle><path d="M7.17501154,19.6833788 L14.6571897,25.5885214 L33.2882357,8.58479461 C33.2882357,8.58479461 34.5388793,7.45437771 35.6297616,8.33684713 C35.9546444,8.60308123 36.3297044,9.35538821 35.4844691,10.533558 L16.0332966,33.1081575 C16.0332966,33.1081575 14.5409558,35.1295483 12.7706046,33.0859181 L4.37721503,21.8564927 C4.37721503,21.8564927 3.38080305,20.3368661 4.62685204,19.4249704 C5.04745453,19.1194879 6.00360378,18.6432371 7.17501154,19.6833788" id="勾-(2)" fill="#80C435"></path></g></svg>');
+          background-size: cover;
+          background-position: center;
+        }
+      }
+      &.disabled {
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+footer {
+  ul {
+    display: flex;
+    height: 50px;
+    list-style: none;
+    text-align: center;
+    flex-grow: 1;
+    background-color: #fff;
+    border-top: solid 1px #e0e0e0;
+    li {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      flex-grow: 1;
+      color: #4A4A4A;
+      line-height: 1.4;
+      height: 100%;
+      &:not(:last-child) {
+        border-right: solid 1px #e0e0e0;
+      }
+      p {
+        font-size: 14px;
+        vertical-align: middle;
+      }
+      span {
+        font-size: 12px;
+      }
+      &.active {
+        background-color: #f2f2f2;
+      }
+      &.pickable {
+        &:nth-child(3) p:before {
+          content: ' ';
+          display: inline-block;
+          margin-right: 5px;
+          width: 10px;
+          height: 10px;
+          vertical-align: middle;
+          background-color: #80C435;
+          border-radius: 100%;
+        }
+        &:nth-child(4) p:before {
+          content: ' ';
+          display: inline-block;
+          margin-right: 5px;
+          width: 10px;
+          height: 10px;
+          vertical-align: middle;
+          background-color: #C3C3C3;
+          border-radius: 100%;
+        }
+        &:nth-child(5) p:before {
+          content: ' ';
+          display: inline-block;
+          margin-right: 5px;
+          width: 10px;
+          height: 10px;
+          vertical-align: middle;
+          background-color: #4A9BDF;
+          border-radius: 100%;
+        }
+      }
+    }
+  }
+  .buttons {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: solid 1px #e0e0e0;
+    background-color: #fff;
+    .botton-wrap {
+      width: 47%
+    }
+  }
+}
+
+.pick-box {
+  text-align: center;
+  line-height: 40px;
+  background-color: #fff;
+}
+
+.room-status-dialog {
+  .payloadinfo {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    .room-type {
+      color: #4B4B4B;
+      font-size: 14px;
+    }
+    .room-number {
+      margin: 0;
+      color: #4B4B4B;
+      font-size: 32px;
+      letter-spacing: 2px;
+      font-weight: normal;
+    }
+  }
+
+  .button-box {
+    padding-bottom: 20px;
+    .checkin {
+      background-color: #4A9BDF;
+      color: #fff;
+    }
+    .cancelorder {
+      margin-top: 60px;
+    }
+  }
+}
